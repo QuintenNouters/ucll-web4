@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GTW_Week02_Synchroon_LoginLogout:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="GTW_Week02_Synchroon_LoginLogout-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="GTW_Week02_Synchroon_LoginLogout:war exploded" />
+    </root>
+  </artifact>
+</component>

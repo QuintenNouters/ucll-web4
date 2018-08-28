@@ -1,0 +1,322 @@
+@CHARSET "UTF-8";
+body {
+	background-color: #f1f1f1;
+	font-size: 16px;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	text-align: left;
+}
+
+header,main, footer, #statusaside {
+	margin: 10px auto;
+	width: 80%;
+	max-width: 800px;
+	display: block;
+}
+
+img {
+	max-width: 100%; /* responsive image */
+}
+
+table {
+	max-width: 100%;
+	background-color: transparent;
+	border-top: 2px solid #666;
+	border-bottom: 2px solid #666;
+	border-collapse: collapse;
+	margin-bottom: 32px;
+}
+
+th {
+	padding: 10px 40px 10px 5px;
+	border-bottom: 1px solid #666;
+	background-color: #eee;
+}
+
+td {
+	padding: 10px 40px 10px 5px;
+}
+
+.number {
+	text-align: right;
+	padding-right: 10px;
+}
+
+p>label {
+	float: left;
+	width: 25%;
+	text-align: right;
+	padding-right: 3%;
+	margin-top: 10px;
+	color: #666;
+}
+
+input[type="text"],input[type="email"],input[type="password"],input[type="number"]
+{
+	border: 1px solid #aaa;
+	color: #666;
+	height: 30px;
+	margin-right: 6px;
+	margin-top: 2px;
+	outline: 0 none;
+	padding: 3px 3px 3px 5px;
+	width: 30%;
+	font-size: 12px;
+	line-height: 15px;
+	border-radius: 3px;
+	box-shadow: inset 0px 1px 4px #ECECEC;
+	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
+	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+input[type="submit"],button {
+	border: 1px solid #aaa;
+	color: #666;
+	height: 30px;
+	margin-right: 6px;
+	margin-top: 2px;
+	margin-left:28%;
+	padding: 3px 3px 3px 5px;
+	font-size: 16px;
+	border-radius: 3px;
+	box-shadow: inset 0px 1px 4px #ECECEC;
+	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
+	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+fieldset {
+	border: 1px solid #999;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+fieldset {
+	border: 1px solid #999;
+}
+
+.danger {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+}
+
+p>label.has-error {
+	color: #a80f0c;
+}
+
+ul {
+	list-style-type: none;
+	margin-left: 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin-bottom: 40px;
+	margin-left: 0;
+	text-align: right;
+}
+
+nav ul li {
+	display: inline-block;
+	font-size: 100%;
+}
+
+nav ul li:first-child {
+	margin-right: 40px;
+}
+nav ul li:last-child {
+	margin-left: 40px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #000;
+}
+
+nav ul li a#actual {
+	border-bottom: 1px solid black;
+}
+
+nav ul li#current {
+	border-bottom: 1px solid black;
+}
+li.searchresult, li.friend{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+input.remove, input.add{
+	height: 70%;
+	min-width: 100px;
+}
+
+#statusaside, #friends, .user{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	min-height: 40px;
+	padding: 1%;
+	height: 70%;
+	padding: 5px 1%;
+	margin: 0 1%;
+}
+#statusside select, #statusaside input[type="text"]{
+	height: 70%;
+	padding: 5px 1%;
+	margin: 0 1%;
+}
+#statusaside input[type="text"]{
+	width: 90%;
+}
+
+.statusonline, .statusoffline, .statusbusy, .statuscustom {
+	vertical-align: center;
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+	border: 1px solid lightgray;
+}
+.statusonline .statustext, .statusoffline .statustext, .statusbusy .statustext, .statuscustom .statustext{
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+}
+.statusonline:hover .statustext, .statusoffline:hover .statustext, .statusbusy:hover .statustext, .statuscustom:hover .statustext{
+	visibility: visible;
+}
+.statusonline{
+	background-color: green;
+}
+.statusoffline{
+	background-color: gray;
+}
+.statusbusy{
+	background-color: red;
+}
+.statuscustom{
+	background-color: orange;
+}
+
+#messages{
+	width: 100%;
+	height: 200px;
+	flex-direction: row;
+
+}
+
+.dmessages{
+	height: 100%;
+	width: 25%;
+	background-color: #aaaaaa;
+	border: 1px solid black;
+	display: none;
+}
+
+.messagehover {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+.messagehover .messagehovertext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+}
+
+.messagehover:hover .messagehovertext {
+	visibility: visible;
+}
+
+/**** Chat Popup Layout******/
+body{
+	background:#e5e5e5;
+	font-family: sans-serif;
+}
+
+.msg_box{
+	position:fixed;
+	bottom:-5px;
+	width:250px;
+	background:white;
+	border-radius:5px 5px 0px 0px;
+}
+
+.msg_head{
+	background:black;
+	color:white;
+	padding:8px;
+	font-weight:bold;
+	cursor:pointer;
+	border-radius:5px 5px 0px 0px;
+}
+
+.msg_body{
+	background:white;
+	height:200px;
+	font-size:12px;
+	padding:15px;
+	overflow:auto;
+	overflow-x: hidden;
+}
+.msg_input{
+	width:100%;
+	height: 55px;
+	border: 1px solid white;
+	border-top:1px solid #DDDDDD;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.close{
+	float:right;
+	cursor:pointer;
+}
+.minimize{
+	float:right;
+	cursor:pointer;
+	padding-right:5px;
+
+}
+
+.msg-left{
+	position:relative;
+	background:#e2e2e2;
+	padding:5px;
+	min-height:10px;
+	margin-bottom:5px;
+	margin-right:10px;
+	border-radius:5px;
+	word-break: break-all;
+}
+
+.msg-right{
+	background:#d4e7fa;
+	padding:5px;
+	min-height:15px;
+	margin-bottom:5px;
+	position:relative;
+	margin-left:10px;
+	border-radius:5px;
+	word-break: break-all;
+}
