@@ -14,6 +14,7 @@ $(document).ready(function(){
         $('[rel="'+chatbox+'"]').hide();
         arr.splice($.inArray(chatbox, arr), 1);
         displayChatBox();
+        $("div.msg_box").remove();
         return false;
     });
 
@@ -49,7 +50,6 @@ $(document).ready(function(){
                 var url = "Controller?action=Message&message="+encodeURI(msg)+"&userid="+encodeURI(id);
                 var chatbox = $(this).parents().parents().parents().attr("rel");
 
-                console.log("DE CORRECTE CHATBOX:" + chatbox);
                 $('<div class="msg-right">'+msg+'</div>').insertBefore('[rel="'+chatbox+'"] .msg_push');
                 $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
                 $.get(url);
@@ -77,7 +77,7 @@ $(document).ready(function(){
 
     function updateMessages(){
         //select the messagep class and empties it
-        $("div.msg_left").remove();
+        $(".msg-left").remove();
         //gets the json and sets it as the data which is used by the function
         $.getJSON("Controller?action=MessageList", function( data ) {
             //for each entry in data make a function with key and val
@@ -86,12 +86,10 @@ $(document).ready(function(){
                 //val is the array of the messages
                 //for each entry in val make a function with i and value
                 $.each(val, function(i, value){
-                    //console.log(value.text);
-                    //var chatbox = $(this).parents().parents().parents().attr("rel");
-                    console.log(value);
+
                     var chatbox = value.from.userId;
                     $('<div class="msg-left">'+value.text+'</div>').insertBefore('[rel="'+chatbox+'"] .msg_push');
-                    //$('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+
                 })
             });
         });

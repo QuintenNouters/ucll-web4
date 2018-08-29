@@ -18,7 +18,6 @@ public class LogInHandler extends RequestHandler {
 	@Override
 	public void handleRequest(HttpServletRequest request,
 							  HttpServletResponse response) throws ServletException, IOException {
-		//String destination = "index.jsp";
 		List<String> errors = new ArrayList<String>();
 
 		String email = request.getParameter("email");
@@ -45,7 +44,6 @@ public class LogInHandler extends RequestHandler {
 			request.setAttribute("errors", errors);
 		}
 		response.sendRedirect("Controller");
-		//return destination;
 	}
 
 	private void createSession(Person person, HttpServletRequest request,

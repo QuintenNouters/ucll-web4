@@ -29,7 +29,7 @@ function getSearchResult(){
                 li.append(statusDiv);
 
                 var par = document.createElement("p");
-                var text = person.userId + " " + person.firstName + " " + person.lastName;
+                var text = person.email + " " + person.firstName + " " + person.lastName;
                 var node = document.createTextNode(text);
                 par.appendChild(node);
                 li.appendChild(par);
@@ -106,7 +106,7 @@ function getFriendsResult(){
 
                 var par = document.createElement("p");
                 par.setAttribute("class", "friendName");
-                var text = person.userId + " " + person.firstName + " " + person.lastName;
+                var text = person.email + " " + person.firstName + " " + person.lastName;
                 var node = document.createTextNode(text);
                 par.appendChild(node);
                 li.appendChild(par);

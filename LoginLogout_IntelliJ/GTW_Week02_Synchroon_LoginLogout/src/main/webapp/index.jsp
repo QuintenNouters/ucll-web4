@@ -20,9 +20,9 @@
 			<c:forEach var="error" items="${errors }">
 				<li>${error }</li>
 			</c:forEach>
-		</ul>
-	</div>
-</c:if>
+			</ul>
+			</div>
+		</c:if>
 		<c:choose>
 			<c:when test="${user!=null}">
 				<p>Welcome ${user.getFirstName()}!</p>

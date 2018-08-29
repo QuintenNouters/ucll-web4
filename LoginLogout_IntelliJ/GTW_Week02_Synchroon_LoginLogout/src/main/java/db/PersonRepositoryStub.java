@@ -4,6 +4,7 @@ import java.util.*;
 
 import domain.Person;
 import domain.Role;
+import util.Hashing;
 
 public class PersonRepositoryStub implements PersonRepository {
 	private Map<String, Person> persons = new HashMap<String, Person>();
@@ -46,8 +47,8 @@ public class PersonRepositoryStub implements PersonRepository {
 			throw new IllegalArgumentException("User already exists");
 		}
 		persons.put(person.getUserId(), person);
-		Set<Person> friendslist = new HashSet<Person>();
-		friends.put(person, friendslist);
+		Set<Person> friendsList = new HashSet<Person>();
+		friends.put(person, friendsList);
 	}
 	
 	public void update(Person person){
@@ -65,7 +66,7 @@ public class PersonRepositoryStub implements PersonRepository {
 	}
 	
 	public Person getAuthenticatedUser(String email, String password) {
-		Person person = get(email);
+		Person person = get(Hashing.SHA256(email, "").substring(0,8));
 		
 		if (person != null && person.isCorrectPassword(password)) {
 			return person;
@@ -82,7 +83,7 @@ public class PersonRepositoryStub implements PersonRepository {
 	public Set<Person> search(String search){
 		Set<Person> result = new HashSet<Person>();
 		for (Person p: persons.values()) {
-			if(p.getUserId().contains(search)){
+			if(p.getEmail().contains(search)){
 				result.add(p);
 			}
 		}
