@@ -46,7 +46,7 @@ public class SignUpHandler extends RequestHandler {
         }
 
         if(errors.isEmpty()){
-            response.sendRedirect("Controller?action=SignUpPage");
+            response.sendRedirect("Controller?action=HomePage");
         }else{
             request.setAttribute("errors", errors);
             request.setAttribute("firstName", firstName);
