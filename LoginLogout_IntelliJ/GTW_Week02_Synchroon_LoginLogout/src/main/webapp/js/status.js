@@ -35,7 +35,6 @@ function getTextFromTextBox(){
 
 function changeStatus(){
     if(dropdown.value == "CUSTOM"){
-        console.log(getTextFromTextBox());
         xhr.open("GET", "Controller?action=Status&status="+encodeURI(dropdown.value)+"&message="+encodeURI(getTextFromTextBox()), true)
     }else{
         xhr.open("GET", "Controller?action=Status&status="+encodeURI(dropdown.value), true)
