@@ -89,7 +89,7 @@ public class SignUpHandler extends RequestHandler {
     private void setEmail(List<String> errors, Person p, String email) {
         try{
             p.setUserId(Hashing.SHA256(email, "").substring(0,8));
-            p.setUserId(email);
+            p.setEmail(email);
         }catch(IllegalArgumentException e){
             errors.add(e.getMessage());
         }
